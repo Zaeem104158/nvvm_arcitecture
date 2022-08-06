@@ -100,7 +100,7 @@ class _LoginViewState extends State<LoginView> {
                     'email': _emailController.text.toString(),
                     'password': _passwordController.text.toString(),
                   };
-                  //Navigator.pushNamed(RoutesName.home,context),
+
                   authViewModel.loginApi(saveddata, context);
                   print("post api hit");
                 }
@@ -114,7 +114,11 @@ class _LoginViewState extends State<LoginView> {
             SizedBox(
               height: height * 0.01,
             ),
-            CustomRoundButton(title: 'Sign Up', onPressed: () {})
+            CustomRoundButton(
+                title: 'Sign Up',
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.signUp);
+                })
           ],
         ),
       ),
