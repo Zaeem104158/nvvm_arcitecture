@@ -2,9 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_mvvm/model/user_model.dart';
 import 'package:practice_mvvm/repository/auth_repository.dart';
 import 'package:practice_mvvm/utilits/routes/routes_name.dart';
 import 'package:practice_mvvm/utilits/utilits.dart';
+import 'package:practice_mvvm/view_model/user_view_model.dart';
+import 'package:provider/provider.dart';
 
 class AuthViewModel with ChangeNotifier {
   bool _loading = false;
@@ -27,8 +30,11 @@ class AuthViewModel with ChangeNotifier {
 
   Future<void> loginApi(dynamic data, context) async {
     setLoading(true);
+
     _myrepo.loginApi(data).then((value) {
       setLoading(false);
+      final userPreference = Provider.of<UserViewModel>(context, listen: false);
+      userPreference.savedUser(UserModel(token: value['token'].toString()));
       Utilits.flushbarSuccessfullMessage('Login Successfully', context);
       Timer(Duration(seconds: 2), () {
         Navigator.pushNamed(context, RoutesName.home);

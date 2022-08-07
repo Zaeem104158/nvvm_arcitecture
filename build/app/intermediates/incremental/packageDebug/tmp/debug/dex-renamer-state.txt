@@ -1,4 +1,4 @@
-#Sun Aug 07 04:17:43 BDT 2022
+#Sun Aug 07 16:25:39 BDT 2022
 base.0=/home/zaeem/nvvm_arcitecture/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
