@@ -8,8 +8,8 @@ class ApiResponse<Data> {
   ApiResponse(this.status, this.data, this.message);
   //another constructor which is redirect to
   ApiResponse.loading() : status = Status.LOADING;
-  ApiResponse.completed() : status = Status.COMPLETED;
-  ApiResponse.error() : status = Status.ERROR;
+  ApiResponse.completed(this.data) : status = Status.COMPLETED;
+  ApiResponse.error(this.message) : status = Status.ERROR;
 
   @override
   String toString() {

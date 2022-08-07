@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_mvvm/model/user_model.dart';
+import 'package:practice_mvvm/resourse/component/custom_drawer.dart';
 import 'package:practice_mvvm/utilits/routes/routes_name.dart';
 import 'package:practice_mvvm/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
@@ -23,13 +24,10 @@ class _HomeViewState extends State<HomeView> {
         },
         child: Scaffold(
           appBar: AppBar(
-            leading: Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
+            iconTheme: IconThemeData(color: Colors.black),
             shadowColor: Colors.blueGrey,
             centerTitle: true,
-            automaticallyImplyLeading: false,
+            automaticallyImplyLeading: true,
             backgroundColor: Colors.blueGrey,
             title: const Text(
               "Home Screen",
@@ -53,6 +51,7 @@ class _HomeViewState extends State<HomeView> {
                   ))
             ],
           ),
+          drawer: CustomDrawer(),
           body: Column(
             children: [],
           ),
