@@ -133,6 +133,17 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: height * 0.01,
               ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              CustomRoundButton(
+                  title: 'Login With Mobile',
+                  onPressed: () {
+                    Navigator.pushNamed(context, RoutesName.signUp);
+                  }),
+              SizedBox(
+                height: height * 0.01,
+              ),
             ],
           ),
         ),
