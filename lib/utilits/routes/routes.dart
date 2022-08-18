@@ -4,7 +4,6 @@ import 'package:practice_mvvm/view/contacts_screen.dart';
 import 'package:practice_mvvm/view/dashboard_screen.dart';
 import 'package:practice_mvvm/view/home_screen.dart';
 import 'package:practice_mvvm/view/login/login_view.dart';
-import 'package:practice_mvvm/view/login/mobile_phone_login_view.dart';
 import 'package:practice_mvvm/view/privacy_policy_screen.dart';
 import 'package:practice_mvvm/view/register/signUp_view.dart';
 import 'package:practice_mvvm/view/settings_screen.dart';
@@ -19,9 +18,6 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const HomeView());
       case RoutesName.login:
         return MaterialPageRoute(builder: (context) => const LoginView());
-      case RoutesName.phoneLogin:
-        return MaterialPageRoute(
-            builder: (context) => const MobilePhoneLoginView());
       case RoutesName.signUp:
         return MaterialPageRoute(builder: (context) => const SignUpView());
       case RoutesName.dashboard:

@@ -1,0 +1,4 @@
+#Fri Aug 19 02:16:01 BDT 2022
+base.0=C\:\\nvvm_arcitecture\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
