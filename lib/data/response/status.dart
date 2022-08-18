@@ -1,1 +1,6 @@
 enum Status { LOADING, COMPLETED, ERROR }
+
+enum MobilePhoneLogin {
+  SHOW_MOBILE_ENTER_WIDGET,
+  SHOW_MOBILE_OTP_WIDGET,
+}

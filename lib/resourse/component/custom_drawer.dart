@@ -1,11 +1,5 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:practice_mvvm/data/response/status.dart';
-import 'package:practice_mvvm/model/single_user_model.dart';
 import 'package:practice_mvvm/utilits/routes/routes_name.dart';
 import 'package:practice_mvvm/view_model/single_user_view_model.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +15,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
   SingleUserViewModel singleUserViewModel = SingleUserViewModel();
   @override
   void initState() {
-    // TODO: implement initState
     singleUserViewModel.fetchSingleUserData();
     super.initState();
   }
@@ -32,8 +25,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
       create: (BuildContext context) => singleUserViewModel,
       child: Consumer<SingleUserViewModel>(builder: (context, value, child) {
         switch (value.singleUserData.status) {
+          case null:
+            break;
           case Status.LOADING:
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           case Status.ERROR:
             return Text(value.singleUserData.status.toString());
           case Status.COMPLETED:

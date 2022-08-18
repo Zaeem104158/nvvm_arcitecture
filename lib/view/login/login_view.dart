@@ -129,7 +129,10 @@ class _LoginViewState extends State<LoginView> {
                   title: 'Sign Up',
                   onPressed: () {
                     Navigator.pushNamed(context, RoutesName.signUp);
-                  })
+                  }),
+              SizedBox(
+                height: height * 0.01,
+              ),
             ],
           ),
         ),
